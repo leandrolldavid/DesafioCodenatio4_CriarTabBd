@@ -34,7 +34,8 @@ namespace Codenation.Challenge.Models
         [Required]
         public String Password { get; set; }
 
-        [Column("Created_at", TypeName = "timestamp")]
+        [Column("Created_at")]
+        [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
 
