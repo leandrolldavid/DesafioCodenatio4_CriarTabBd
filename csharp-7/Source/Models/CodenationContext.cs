@@ -19,7 +19,7 @@ namespace Codenation.Challenge.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Candidate>()
-                .HasKey(x => new { x.User_Id, x.Acceleration_Id, x.Company_Id, x.Status, x.Created_at });
+                .HasKey(x => new { x.User_Id, x.Acceleration_Id, x.Company_Id, x.Status });
             modelBuilder.Entity<Submission>()
                 .HasKey(x => new { x.User_Id, x.Chanllege_Id, x.Score });
         }
