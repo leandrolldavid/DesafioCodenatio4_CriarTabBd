@@ -35,10 +35,10 @@ entidade e cada relacionamento do Modelo ER.
 - O modelo ER apresenta as chaves estrangeiras porém não indica quais navegações `1..*` devem ser configuradas.
         Dessa forma admita que todas chaves estrangeiras requerem uma navegações `1..*` na classe que representa a 
         entidade pai. Abaixo a lista das navegações que serão checadas:
-  - Entidade `User`: navegação para `Candidate` e `Submission`
-  - Entidade `Acceleration`: navegação para `Candidate`
-  - Entidade `Company`: navegação para `Candidate`
-  - Entidade `Challenge`: navegação para `Acceleration` e `Submission`
+  - Entidade `User`: navegação para `Candidate` e `Submission` ok
+  - Entidade `Acceleration`: navegação para `Candidate` ok
+  - Entidade `Company`: navegação para `Candidate`ok
+  - Entidade `Challenge`: navegação para `Acceleration` e `Submission` ok
 
 ### Informações adicionais
 
