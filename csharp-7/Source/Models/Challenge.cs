@@ -16,13 +16,13 @@ namespace Codenation.Challenge.Models
         [Required]
         public int Id { get; set; }
 
-       [Column("name", TypeName = "varchar(100)")]
-        [MaxLength(100)]
+        [Column("name")]
+        [StringLength(100)]
         [Required]
         public String Name { get; set; }
 
-        [Column("slug", TypeName = "varchar(50)")]
-        [MaxLength(50)]
+        [Column("slug")]
+        [StringLength(50)]
         [Required]
         public String Slug { get; set; }
 

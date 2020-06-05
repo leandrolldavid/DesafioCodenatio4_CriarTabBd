@@ -16,19 +16,23 @@ namespace Codenation.Challenge.Models
         [Required]
         public int Id { get; set; }
 
-        [Column("full_name", TypeName = "varchar(100)")]
+        [Column("full_name")]
+        [StringLength(100)]
         [Required]
         public String Full_name { get; set; }
 
-        [Column("email", TypeName = "varchar(100)")]
+        [Column("email")]
+        [StringLength(100)]
         [Required]
         public String Email { get; set; }
 
-        [Column("nickname", TypeName = "varchar(50)")]
+        [Column("nickname")]
+        [StringLength(50)]
         [Required]
         public String Nickname { get; set; }
 
-        [Column("password", TypeName = "varchar(255)")]
+        [Column("password")]
+        [StringLength(255)]
         [Required]
         public String Password { get; set; }
 

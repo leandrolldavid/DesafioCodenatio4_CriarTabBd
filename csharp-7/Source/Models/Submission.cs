@@ -10,25 +10,25 @@ namespace Codenation.Challenge.Models
     [Table("submission")]
     public class Submission
     {
-        //[Column("user_id")]
-        [ForeignKey("user_id")]
-        [Required]
-        public int User_Id { get; set; }
-
-      //  [Column("chanllenge_id")]
-        [ForeignKey("chanllenge_id")]
-        [Required]
-        public int Chanllege_Id { get; set; }
-
         [Column("score", TypeName = "float")]
         [Required]
         public decimal Score { get; set; }
 
-        [Column("Created_at", TypeName = "timestamp")]
+        [Column("Created_at")]
+        [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
 
+        [Column("chanllenge_id")]
+        [ForeignKey("Challenge")]
+        [Required]
+        public int Chanllege_Id { get; set; }
         public Challenge Challenge { get; set; }
+
+        [Column("user_id")]
+        [ForeignKey("User")]
+        [Required]
+        public int User_Id { get; set; }
         public User User { get; set; }
     }
 }
