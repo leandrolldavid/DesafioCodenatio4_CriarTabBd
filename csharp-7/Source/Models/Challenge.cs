@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,7 +11,6 @@ namespace Codenation.Challenge.Models
     {
         [Key]
         [Column("id")]
-        [Required]
         public int Id { get; set; }
 
         [Column("name")]
@@ -26,11 +23,14 @@ namespace Codenation.Challenge.Models
         [Required]
         public String Slug { get; set; }
 
-        [Column("Created_at", TypeName = "timestamp")]
+        [Column("created_at")]
+        [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
 
         public ICollection<Acceleration> Accelerations { get; set; }
         public ICollection<Submission> Submissions { get; set; }
+
+        //public List<Submission> Submissions {get; set;}
     }
 }

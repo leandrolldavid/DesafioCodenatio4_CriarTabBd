@@ -10,7 +10,6 @@ namespace Codenation.Challenge.Models
     {
         [Key]
         [Column("id")]
-        [Required]
         public int Id { get; set; }
 
         [Column("name")]
@@ -23,15 +22,15 @@ namespace Codenation.Challenge.Models
         [Required]
         public String Slug { get; set; }
 
-        [Column("Created_at")]
+        [Column("created_at")]
         [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
 
-        [Column("chanllenge_id")]
+        [Column("challenge_id")]
         [ForeignKey("Challenge")]
         [Required]
-        public int Chanllege_Id { get; set; }
+        public int Challenge_id { get; set; }
         public Challenge Challenge { get; set; }
 
         public ICollection<Candidate> Candidates { get; set; }

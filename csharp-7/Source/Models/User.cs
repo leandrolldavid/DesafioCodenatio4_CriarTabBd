@@ -6,14 +6,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Codenation.Challenge.Models
-
 {
     [Table("user")]
     public class User
     {
         [Key]
         [Column("id")]
-        [Required]
         public int Id { get; set; }
 
         [Column("full_name")]
@@ -36,7 +34,8 @@ namespace Codenation.Challenge.Models
         [Required]
         public String Password { get; set; }
 
-        [Column("Created_at", TypeName = "timestamp")]
+        [Column("created_at")]
+        [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
 

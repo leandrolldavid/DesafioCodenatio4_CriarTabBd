@@ -13,7 +13,7 @@ namespace Codenation.Challenge.Models
         [Required]
         public int Status { get; set; }
 
-        [Column("Created_at")]
+        [Column("created_at")]
         [Timestamp]
         [Required]
         public DateTime Created_at { get; set; }
@@ -21,19 +21,19 @@ namespace Codenation.Challenge.Models
         [Column("user_id")]
         [ForeignKey("User")]
         [Required]
-        public int User_Id { get; set; }
+        public int User_id { get; set; }
         public User User { get; set; }
 
         [Column("acceleration_id")]
         [ForeignKey("Acceleration")]
         [Required]
-        public int Acceleration_Id { get; set; }
+        public int Acceleration_id { get; set; }
         public Acceleration Acceleration { get; set; }
 
-        [Column("Company_id")]
+        [Column("company_id")]
         [ForeignKey("Company")]
         [Required]
-        public int Company_Id { get; set; }
+        public int Company_id { get; set; }
         public Company Company { get; set; }
     }
 }
