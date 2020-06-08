@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Source.ConfigurationModel;
 
 namespace Codenation.Challenge.Models
 {
@@ -18,10 +19,9 @@ namespace Codenation.Challenge.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Candidate>()
-                .HasKey(x => new { x.User_id, x.Acceleration_id, x.Company_id, x.Status });
-            modelBuilder.Entity<Submission>()
-                .HasKey(x => new { x.User_id, x.Challenge_id, x.Score });
+            modelBuilder.ApplyConfiguration(new CandidateConfiguration());
+            modelBuilder.ApplyConfiguration(new SubmissionConfiguration());
+
         }
     }
 }

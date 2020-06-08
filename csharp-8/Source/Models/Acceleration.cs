@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,31 +8,31 @@ namespace Codenation.Challenge.Models
     [Table("acceleration")]
     public class Acceleration
     {
-        [Key]
         [Column("id")]
+        [Key]
         public int Id { get; set; }
 
         [Column("name")]
-        [MaxLength(100)]
+        [StringLength(100)]
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         [Column("slug")]
-        [MaxLength(50)]
+        [StringLength(50)]
         [Required]
-        public String Slug { get; set; }
+        public string Slug { get; set; }
+
+        [Column("challenge_id")]
+        public int ChallengeId { get; set; }
+
+        [ForeignKey("ChallengeId")]
+        public virtual Challenge Challenge { get; set; }
 
         [Column("created_at")]
-        [Timestamp]
         [Required]
         public DateTime CreatedAt { get; set; }
 
-        [Column("challenge_id")]
-        [ForeignKey("Challenge")]
-        [Required]
-        public int ChallengeId { get; set; }
-        public Challenge Challenge { get; set; }
+        public virtual ICollection<Candidate> Candidates { get; set; }        
 
-        public ICollection<Candidate> Candidates { get; set; }
     }
 }

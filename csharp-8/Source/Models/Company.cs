@@ -1,34 +1,32 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace Codenation.Challenge.Models
-{ 
-    [Table("challenge")]
-    public class Challenge
+{
+    [Table("company")]
+    public class Company
     {
-        [Key]
         [Column("id")]
+        [Key]
         public int Id { get; set; }
 
         [Column("name")]
-        [MaxLength(100)]
+        [StringLength(100)]
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         [Column("slug")]
-        [MaxLength(50)]
+        [StringLength(50)]
         [Required]
-        public String Slug { get; set; }
+        public string Slug { get; set; }
 
         [Column("created_at")]
-        [Timestamp]
         [Required]
         public DateTime CreatedAt { get; set; }
-        
-        public ICollection<Acceleration> Accelerations { get; set; }
-        public ICollection<Submission> Submissions { get; set; }
+
+        public virtual ICollection<Candidate> Candidates { get; set; }
+
     }
 }

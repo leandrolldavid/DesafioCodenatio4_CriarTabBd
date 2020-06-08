@@ -13,20 +13,20 @@ namespace Codenation.Challenge.Models
         public int Id { get; set; }
 
         [Column("name")]
-        [StringLength(100)]
+        [MaxLength(100)]
         [Required]
         public String Name { get; set; }
 
         [Column("slug")]
-        [StringLength(50)]
+        [MaxLength(50)]
         [Required]
         public String Slug { get; set; }
 
         [Column("created_at")]
         [Timestamp]
         [Required]
-        public DateTime Created_at { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-        public ICollection<Candidate> Candiddates { get; set; }
+        public ICollection<Candidate> Candidates { get; set; }
     }
 }
